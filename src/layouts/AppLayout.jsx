@@ -8,7 +8,7 @@ const AppLayout = () => {
         {/* Header */}
         <Outlet />
       </main>
-      <footer className="text-center p-5 text-white bg-gray-800">
+      <footer className="text-center p-5 text-white bg-violet-800">
         <div>Footer for our page</div>
       </footer>
     </div>

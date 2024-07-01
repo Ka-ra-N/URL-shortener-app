@@ -1,29 +1,57 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { LinkIcon, LogOut } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = true;
   return (
-    <nav className="p-3 bg-pink-500 flex items-center justify-between">
+    <nav className="p-2 px-6 bg-[#0EA5E9] rounded-b-xl flex items-center justify-between">
       <Link to={"/"}>
-        <div className="img-container bg-white size-10 rounded-full"></div>
+        <div className="img-container bg-zinc-900 size-12 rounded-full grid place-items-center p-2">
+          <img src="/logo.png" alt="" className="size-full object-cover" />
+        </div>
       </Link>
+
+      <h1 className="font-bold font-dosis text-2xl tracking-wider uppercase">
+        Sh<span>o</span>rtener
+      </h1>
+
       <div className="btns">
         {!user ? (
           <Button onClick={() => navigate("/authentication")}>Login</Button>
         ) : (
           <DropdownMenu>
-            <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+            <DropdownMenuTrigger className="outline-none">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>Karan Singh</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
+              {[
+                [<LinkIcon className="mr-2 size-4" />, "My Links"],
+                [<LogOut className="mr-2 size-4 text-red-500" />, "Logout"],
+              ].map((item, index) => (
+                <DropdownMenuItem key={index}>
+                  {item[0]}
+                  <span className={`${index === 1 ? "text-red-500" : ""}`}>
+                    {item[1]}
+                  </span>
+                </DropdownMenuItem>
+              ))}
             </DropdownMenuContent>
           </DropdownMenu>
         )}

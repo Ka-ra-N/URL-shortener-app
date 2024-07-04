@@ -72,3 +72,29 @@
     @apply bg-background text-foreground overflow-x-hidden;
   }
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b65;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e293b;
+}
+
+.gradient-text {
+  background-color: #f3ec78;
+  background-image: linear-gradient(to bottom, #ffffff, #0EA5E9);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  filter: drop-shadow(0 0 0.35rem rgb(77, 1, 255));
+}

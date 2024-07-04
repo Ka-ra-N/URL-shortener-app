@@ -16,15 +16,15 @@ const Header = () => {
   const navigate = useNavigate();
   const user = true;
   return (
-    <nav className="p-2 px-6 bg-[#0EA5E9] rounded-b-xl flex items-center justify-between">
+    <nav className="p-2 px-6 bg-[#0EA5E9] rounded-b-lg flex items-center justify-between">
       <Link to={"/"}>
         <div className="img-container bg-zinc-900 size-12 rounded-full grid place-items-center p-2">
           <img src="/logo.png" alt="" className="size-full object-cover" />
         </div>
       </Link>
 
-      <h1 className="font-bold font-dosis text-2xl tracking-wider uppercase">
-        Sh<span>o</span>rtener
+      <h1 className="font-extrabold font-dosis text-2xl tracking-wider uppercase">
+        <span className="text-gray-800">Short</span>ener
       </h1>
 
       <div className="btns">

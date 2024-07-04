@@ -72,7 +72,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily:{
-        dosis:["Dosis", "sans-serif"]
+        dosis:["Dosis", "sans-serif"],
+        poetsen:["Poetsen One", "sans-serif"]
       }
     },
   },
